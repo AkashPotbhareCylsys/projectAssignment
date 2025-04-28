@@ -57,7 +57,7 @@ const RegistrationController = {
 
             console.log("Stored Hash:", result[0].TUP_PASSWORD_HASH);
             console.log("Entered Pasword:", password);
-            console.log(typeof result[0].TUP_PROFILE_PICTURE, "result[0].TUP_PROFILE_PICTURE");
+            // console.log(typeof result[0].TUP_PROFILE_PICTURE, "result[0].TUP_PROFILE_PICTURE");
             const imagepath = result[0].TUP_PROFILE_PICTURE ? url + result[0].TUP_PROFILE_PICTURE : null;
             console.log(imagepath, "imagepath");
             ///////////
