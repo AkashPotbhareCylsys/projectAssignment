@@ -3,7 +3,7 @@
 
 # Node.js User Management API
 
-A simple REST API for user registration, login (JWT), profile management.
+A  REST API for user registration, login (JWT), profile management.
 
 ## Features
 
