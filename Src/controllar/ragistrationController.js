@@ -54,13 +54,15 @@ const RegistrationController = {
                     message: 'Email Not found.'
                 });
             }
+            const userdata = result[0];
+            console.log(userdata, "Full DB ResponseHashesadeeswefffff");
 
             console.log("Stored Hash:", result[0].TUP_PASSWORD_HASH);
             console.log("Entered Pasword:", password);
-            // console.log(typeof result[0].TUP_PROFILE_PICTURE, "result[0].TUP_PROFILE_PICTURE");
+           
             const imagepath = result[0].TUP_PROFILE_PICTURE ? url + result[0].TUP_PROFILE_PICTURE : null;
             console.log(imagepath, "imagepath");
-            ///////////
+            
             bcrypt.compare(password, result[0].TUP_PASSWORD_HASH, (err, result) => {
 
                 if (err) {
@@ -99,7 +101,8 @@ const RegistrationController = {
                     error: false,
                     message: 'User login successfully',
                     auth_token: token,
-                    image: imagepath
+                    image: imagepath,
+                    data: userdata
                 });
 
             });
