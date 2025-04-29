@@ -37,14 +37,12 @@ const UserModel = {
     userLogin: async (email, password) => {
         try {
             const [resultSets] = await db.execute('CALL sp_userlogin(?)', [email])
-
-
-            const rows = resultSets[0] || [];
+            const rows = resultSets[0];
             if (rows.length === 0 || rows[0].error_message) {
                 throw new Error(rows[0]?.error_message || 'User not found for the specified email.');
             }
-            console.log(rows, "Full DB ResponseModelllllllllllllll");
-            return rows; // { TUP_USER_ID, TUP_EMAIL, TUP_PASSWORD_HASH, … }
+            console.log(rows, "Full DB ResponseModel");
+            return rows; 
         } catch (err) {
             console.error('Error in userLogin model:', err.message);
             throw err;
